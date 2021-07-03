@@ -1,4 +1,4 @@
-;;; org-roam.el --- Roam Research replica with Org-mode -*- coding: utf-8; lexical-binding: t; -*-
+;;; org-roam-v1.el --- Roam Research replica with Org-mode -*- coding: utf-8; lexical-binding: t; -*-
 
 ;; Copyright © 2020 Jethro Kuan <jethrokuan95@gmail.com>
 
@@ -1941,5 +1941,5 @@ Interactively, or when MESSAGE is non-nil, show in the echo area."
         (message "%s" version)
       version)))
 
-(provide 'org-roam)
-;;; org-roam.el ends here
+(provide 'org-roam-v1)
+;;; org-roam-v1.el ends here
