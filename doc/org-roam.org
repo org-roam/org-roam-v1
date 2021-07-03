@@ -196,7 +196,7 @@ Once you have done that, you can install Org-roam and its dependencies
 using:
 
 #+BEGIN_EXAMPLE
-  M-x package-install RET org-roam RET
+  M-x package-install RET org-roam-v1 RET
 #+END_EXAMPLE
 
 Now see [[*Post-Installation Tasks][Post-Installation Tasks]].

@@ -42,7 +42,7 @@ M-x package-install RET org-roam RET
 Here's a sample configuration with `use-package`:
 
 ```emacs-lisp
-(use-package org-roam
+(use-package org-roam-v1
       :ensure t
       :hook
       (after-init . org-roam-mode)
