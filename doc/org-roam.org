@@ -8,13 +8,13 @@
 #+texinfo_dir_category: Emacs
 #+texinfo_dir_title: Org-roam: (org-roam).
 #+texinfo_dir_desc: Rudimentary Roam Replica for Emacs.
-#+subtitle: for version 1.2.3
+#+subtitle: for version 1.2.4
 
 #+options: H:4 num:3 toc:nil creator:t ':t
 #+property: header-args :eval never
 #+texinfo: @noindent
 
-This manual is for Org-roam version 1.2.3.
+This manual is for Org-roam version 1.2.4.
 
 #+BEGIN_QUOTE
 Copyright (C) 2020-2020 Jethro Kuan <jethrokuan95@gmail.com>
@@ -28,6 +28,10 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 General Public License for more details.
 #+END_QUOTE
+* Deprecation Notice
+
+Org-roam v1 is no longer actively maintained. Consider migrating to the [[https://github.com/org-roam/org-roam/][latest
+Org-roam]].
 
 * Introduction
 
@@ -152,65 +156,18 @@ addition of different templates to facilitate the creation of these notes.
 
 * Installation
 
-Org-roam can be installed using Emacs' package manager or manually from its
-development repository.
+Org-roam v1 can only be installed from its development repository.
 
-** Installing from MELPA
+** Installation using straight.el
 
-Org-roam is available from Melpa and Melpa-Stable. If you haven't used Emacs'
-package manager before, you may familiarize yourself with it by reading the
-documentation in the Emacs manual, see info:emacs#Packages. Then, add one of the
-archives to =package-archives=:
+Emacs package managers like ~straight.el~ make it simple to install packages
+from their source repositories. To install Org-roam v1 using straight, simply
+use the following snippet:
 
-- To use Melpa:
-
-#+BEGIN_SRC emacs-lisp
-  (require 'package)
-  (add-to-list 'package-archives
-               '("melpa" . "http://melpa.org/packages/") t)
-#+END_SRC
-
-- To use Melpa-Stable:
-
-#+BEGIN_SRC emacs-lisp
-  (require 'package)
-  (add-to-list 'package-archives
-               '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-#+END_SRC
-
-Org-roam also depends on a recent version of Org, which can be obtained in Org's
-package repository (see info:org#Installation). To use Org's ELPA archive:
-
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
-#+END_SRC
-
-Once you have added your preferred archive, you need to update the
-local package list using:
-
-#+BEGIN_EXAMPLE
-  M-x package-refresh-contents RET
-#+END_EXAMPLE
-
-Once you have done that, you can install Org-roam and its dependencies
-using:
-
-#+BEGIN_EXAMPLE
-  M-x package-install RET org-roam-v1 RET
-#+END_EXAMPLE
-
-Now see [[*Post-Installation Tasks][Post-Installation Tasks]].
-
-** Installing from Apt
-
-Users of Debian 11 or later or Ubuntu 20.10 or later can simply install Org-roam
-using Apt:
-
-#+BEGIN_SRC bash
-  apt-get install elpa-org-roam
-#+END_SRC
-
-Org-roam will then be autoloaded into Emacs.
+#+begin_src emacs-lisp
+(straight-use-package
+ '(org-roam :type git :host github :repo "org-roam/org-roam-v1"))
+#+end_src
 
 ** Installing from the Git Repository
 
@@ -228,7 +185,7 @@ GitHub.
 Installing from GitHub requires that you clone the repository:
 
 #+begin_src bash
-git clone https://github.com/org-roam/org-roam.git /path/to/org/roam
+git clone https://github.com/org-roam/org-roam-v1.git /path/to/org/roam
 #+end_src
 
 where ~./path/to/org/roam~ is the location you will store your copy of the code.

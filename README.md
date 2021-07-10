@@ -1,4 +1,11 @@
-# Org-roam [![GitHub Release][release-badge]][release] [![MELPA][melpa-badge]][melpa] [![License GPL 3][gpl3-badge]][gpl3]
+---
+**NOTE**
+
+This repo contains Org-roam v1, which is no longer actively maintained.
+Consider migrating to [latest Org-roam](https://github.com/org-roam/org-roam/).
+---
+
+# Org-roam v1 [![GitHub Release][release-badge]][release] [![MELPA][melpa-badge]][melpa] [![License GPL 3][gpl3-badge]][gpl3]
  
 <img src="https://www.orgroam.com/img/logo.svg" align="right" alt="Org-roam Logo" width="240">
 
@@ -33,28 +40,32 @@ solution for anyone already using Org-mode for their personal wiki.
 
 ## Installation
 
-You can install `org-roam` using `package.el`:
+Only the latest Org-roam is distributed on MELPA. Hence, installation of
+`org-roam` v1 should be done by using Git. For example, one can use
+`straight.el` to fetch this repository:
 
-```
-M-x package-install RET org-roam RET
+``` emacs-lisp
+(straight-use-package
+ '(org-roam :type git :host github :repo "org-roam/org-roam-v1"))
 ```
 
-Here's a sample configuration with `use-package`:
+Here's a sample configuration with `use-package` with `straight.el`:
 
 ```emacs-lisp
-(use-package org-roam-v1
-      :ensure t
-      :hook
-      (after-init . org-roam-mode)
-      :custom
-      (org-roam-directory (file-truename "/path/to/org-files/"))
-      :bind (:map org-roam-mode-map
-              (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph))
-              :map org-mode-map
-              (("C-c n i" . org-roam-insert))
-              (("C-c n I" . org-roam-insert-immediate))))
+(use-package org-roam
+  :ensure t
+  :straight (:type git :host github :repo "org-roam/org-roam-v1")
+  :hook
+  (after-init . org-roam-mode)
+  :custom
+  (org-roam-directory (file-truename "/path/to/org-files/"))
+  :bind (:map org-roam-mode-map
+         (("C-c n l" . org-roam)
+          ("C-c n f" . org-roam-find-file)
+          ("C-c n g" . org-roam-graph))
+         :map org-mode-map
+         (("C-c n i" . org-roam-insert))
+         (("C-c n I" . org-roam-insert-immediate))))
 ```
 
 The `file-truename` function is only necessary when you use symbolic links
